@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: rotapro
+      POSTGRES_USER: rotapro
+      POSTGRES_PASSWORD: rotapro
+    ports:
+      - "5432:5432"
+    volumes:
+      - rotapro_pg:/var/lib/postgresql/data
+volumes:
+  rotapro_pg:
